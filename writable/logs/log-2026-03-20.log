@@ -1,0 +1,96 @@
+ERROR - 2026-03-20 10:14:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Xampp\htdocs\lettuce\app\Controllers\Home.php(100): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(951): App\Controllers\Home->dbTest()
+#4 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 E:\Xampp\htdocs\lettuce\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#7 E:\Xampp\htdocs\lettuce\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 E:\Xampp\htdocs\lettuce\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Xampp\htdocs\lettuce\app\Controllers\Home.php(100): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(951): App\Controllers\Home->dbTest()
+#3 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 E:\Xampp\htdocs\lettuce\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 E:\Xampp\htdocs\lettuce\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#6 E:\Xampp\htdocs\lettuce\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#7 E:\Xampp\htdocs\lettuce\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#8 {main}
+ERROR - 2026-03-20 10:19:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#5 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\Xampp\htdocs\lettuce\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 E:\Xampp\htdocs\lettuce\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 E:\Xampp\htdocs\lettuce\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 E:\Xampp\htdocs\lettuce\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 E:\Xampp\htdocs\lettuce\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 E:\Xampp\htdocs\lettuce\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#4 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 E:\Xampp\htdocs\lettuce\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 E:\Xampp\htdocs\lettuce\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 E:\Xampp\htdocs\lettuce\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 E:\Xampp\htdocs\lettuce\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 E:\Xampp\htdocs\lettuce\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 E:\Xampp\htdocs\lettuce\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-03-20 10:27:35 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#5 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\Xampp\htdocs\lettuce\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 E:\Xampp\htdocs\lettuce\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 E:\Xampp\htdocs\lettuce\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 E:\Xampp\htdocs\lettuce\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 E:\Xampp\htdocs\lettuce\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 E:\Xampp\htdocs\lettuce\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in E:\Xampp\htdocs\lettuce\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 E:\Xampp\htdocs\lettuce\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#4 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 E:\Xampp\htdocs\lettuce\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 E:\Xampp\htdocs\lettuce\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 E:\Xampp\htdocs\lettuce\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 E:\Xampp\htdocs\lettuce\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 E:\Xampp\htdocs\lettuce\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 E:\Xampp\htdocs\lettuce\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 E:\Xampp\htdocs\lettuce\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 E:\Xampp\htdocs\lettuce\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
