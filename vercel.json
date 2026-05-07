@@ -2,14 +2,37 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",
-      "use": "@vercel/python"
+      "src": "public/index.php",
+      "use": "@vercel/php"
     }
   ],
+  "functions": {
+    "api/*.py": {
+      "runtime": "@vercel/python"
+    }
+  },
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/public/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/public/js/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/public/index.php"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/public/index.php"
     }
   ]
 }
