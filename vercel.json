@@ -2,16 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "lettuce/public/index.php",
+      "src": "public/index.php",
       "use": "@vercel/php"
     }
   ],
   "functions": {
     "api/*.py": {
       "runtime": "@vercel/python"
-    },
-    "public/index.php": {
-      "runtime": "vercel-php@0.7.2"
     }
   },
   "routes": [
@@ -29,13 +26,13 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/lettuce/public/index.php"
+      "dest": "/public/index.php"
     }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/lettuce/public/index.php"
+      "destination": "/public/index.php"
     }
   ]
 }
