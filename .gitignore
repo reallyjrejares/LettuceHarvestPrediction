@@ -36,9 +36,14 @@ Thumbs.db
 # Python virtual environment (if using local Flask)
 python_api/venv/
 
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+
 # Model cache files
 *.pkl
-!python_api/harvest_model.pkl
+*.joblib
+!python_api/harvest_model.joblib
 
 # Node modules
 node_modules/

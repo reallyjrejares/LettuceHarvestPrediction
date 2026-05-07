@@ -6,14 +6,14 @@ Your Flask app has been converted to **Vercel serverless functions**:
 - `api/predict.py` - handles predictions (60s timeout)
 - `api/health.py` - health check endpoint
 
-Model is loaded from `python_api/harvest_model.pkl`
+Model is loaded from `python_api/harvest_model.joblib`
 
 ## 🚀 Deployment Steps
 
 ### 1. Prepare Your Project
 ```bash
 # Make sure your model is renamed and placed correctly
-python_api/harvest_model.pkl  ← your model file
+python_api/harvest_model.joblib  ← your model file
 ```
 
 ### 2. Push to GitHub
@@ -96,7 +96,7 @@ lettuce/
 │   ├── predict.py          ← serverless function
 │   └── health.py           ← health check
 ├── python_api/
-│   └── harvest_model.pkl   ← your model
+│   └── harvest_model.joblib   ← your model
 ├── vercel.json             ← config
 └── .env                    ← updated URL
 ```
@@ -104,7 +104,7 @@ lettuce/
 ## 🆘 Troubleshooting
 
 **Model file not found:**
-- Ensure `harvest_model.pkl` is in `python_api/`
+- Ensure `harvest_model.joblib` is in `python_api/`
 - File must be committed to Git
 - Check Vercel build logs
 

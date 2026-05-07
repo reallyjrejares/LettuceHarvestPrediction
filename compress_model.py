@@ -2,14 +2,12 @@
 Model Compression Script
 Converts your model to a lightweight format for Vercel deployment
 """
-import pickle
 import os
+import joblib
 
 try:
-    model_path = 'python_api/harvest_model.pkl'
-    
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
+    model_path = 'python_api/harvest_model.joblib'
+    model = joblib.load(model_path)
     
     print(f"✓ Model loaded successfully")
     print(f"✓ Model type: {type(model).__name__}")

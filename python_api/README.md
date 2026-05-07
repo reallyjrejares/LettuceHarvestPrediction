@@ -1,24 +1,24 @@
 # Smart Harvest Flask ML API - Setup Guide
 
 ## Overview
-This directory contains a local Flask API server that loads your scikit-learn `.pkl` model and serves predictions to your CodeIgniter application.
+This directory contains a local Flask API server that loads your scikit-learn model (`.joblib`) and serves predictions to your CodeIgniter application.
 
 ## Prerequisites
 - Python 3.8+ installed on your machine ([Download Python](https://www.python.org/))
-- Your `model.pkl` file (downloaded from Google Colab)
+- Your model file (`harvest_model.joblib`)
 
 ## Setup Instructions
 
 ### Step 1: Place Your Model
-1. Download your `.pkl` model file from Google Colab:
+1. Download your model file from Google Colab:
    ```python
    from google.colab import files
-   files.download('your_model.pkl')
+   files.download('harvest_model.joblib')
    ```
 
 2. Place the downloaded file in this directory (`python_api/`) and rename it to:
    ```
-   model.pkl
+   harvest_model.joblib
    ```
 
 ### Step 2: Install Dependencies (Automatic)
@@ -107,7 +107,7 @@ Response:
 ## Troubleshooting
 
 ### Issue: "Model file not found"
-**Solution:** Make sure your `model.pkl` is in the same directory as `app.py`
+**Solution:** Make sure your `harvest_model.joblib` is in the same directory as `app.py`
 
 ### Issue: "Port 5000 is already in use"
 **Solution:** 
@@ -147,7 +147,7 @@ For help with production setup, contact your hosting provider or DevOps team.
 ```
 python_api/
 ├── app.py                    # Flask application
-├── model.pkl                 # Your ML model (place here)
+├── harvest_model.joblib      # Your ML model (place here)
 ├── requirements.txt          # Python dependencies
 ├── run_server.bat            # Windows launcher
 ├── run_server.sh             # macOS/Linux launcher
@@ -155,7 +155,7 @@ python_api/
 ```
 
 ## Next Steps
-1. ✅ Place your `model.pkl` in this directory
+1. ✅ Place your `harvest_model.joblib` in this directory
 2. ✅ Run `run_server.bat` (Windows) or `bash run_server.sh` (Mac/Linux)
 3. ✅ Verify the API is working with the health check
 4. ✅ Your CodeIgniter app is already configured to use `http://127.0.0.1:5000/predict`

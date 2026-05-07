@@ -2,16 +2,15 @@
 Convert scikit-learn Random Forest model to ONNX format
 ONNX models are 80% smaller and faster!
 """
-import pickle
 import os
+import joblib
 from skl2onnx import convert_sklearn
 from skl2onnx.common.data_types import FloatTensorType
 
 try:
     # Load your current model
-    model_path = 'python_api/harvest_model.pkl'
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
+    model_path = 'python_api/harvest_model.joblib'
+    model = joblib.load(model_path)
     
     print(f"✓ Random Forest model loaded")
     print(f"✓ Model type: {type(model).__name__}")

@@ -2,17 +2,14 @@
 Compress the existing model using joblib compression
 Joblib handles version mismatches better than pickle
 """
-import pickle
 import joblib
 import os
 
 try:
-    # Load the existing pickle model
-    model_path = 'python_api/harvest_model.pkl'
+    # Load the existing model
+    model_path = 'python_api/harvest_model.joblib'
     print("Loading model...")
-    
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
+    model = joblib.load(model_path)
     
     print(f"✓ Model loaded: {type(model).__name__}")
     

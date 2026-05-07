@@ -6,7 +6,11 @@ $latestEnv = ($plants ?? [])[0] ?? null;
 $aiPlantDate = $latestEnv['date_planted'] ?? date('Y-m-d');
 $aiVariety = $latestEnv['variety'] ?? 'Romaine';
 $aiPlantId = $latestEnv['id'] ?? null;
-$mlEndpoint = getenv('ML_PREDICT_URL') ?: '';
+$mlEndpoint = trim(getenv('ML_PREDICT_URL') ?: '');
+if ($mlEndpoint !== '' && !preg_match('#^[a-z][a-z0-9+.-]*://#i', $mlEndpoint) && $mlEndpoint[0] !== '/') {
+    $scheme = preg_match('#^(localhost|127\\.0\\.0\\.1)(:|/|$)#i', $mlEndpoint) ? 'http://' : 'https://';
+    $mlEndpoint = $scheme . $mlEndpoint;
+}
 $weatherEndpoint = site_url('weather');
 $aiPlantOptions = [];
 foreach (($plants ?? []) as $plant) {

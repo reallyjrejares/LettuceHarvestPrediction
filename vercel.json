@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "lettuce/public/index.php",
+      "use": "@vercel/php"
+    }
+  ],
   "functions": {
     "api/*.py": {
       "runtime": "@vercel/python"
@@ -23,7 +29,13 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/public/index.php"
+      "dest": "/lettuce/public/index.php"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/lettuce/public/index.php"
     }
   ]
 }
