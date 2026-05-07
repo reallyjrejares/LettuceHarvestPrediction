@@ -4,7 +4,7 @@ Loads scikit-learn model and serves predictions
 """
 import os
 import json
-import pickle
+import joblib
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -12,11 +12,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the model
-MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model.pkl')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'harvest_model.joblib')
 
 try:
-    with open(MODEL_PATH, 'rb') as f:
-        model = pickle.load(f)
+    model = joblib.load(MODEL_PATH)
     print(f"✓ Model loaded successfully from {MODEL_PATH}")
 except FileNotFoundError:
     print(f"✗ Model file not found at {MODEL_PATH}")

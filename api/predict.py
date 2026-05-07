@@ -1,14 +1,13 @@
-import pickle
+import joblib
 import json
 import os
 from pathlib import Path
 
 # Load model once (cached between invocations)
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'python_api', 'harvest_model.pkl')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'python_api', 'harvest_model.joblib')
 
 try:
-    with open(MODEL_PATH, 'rb') as f:
-        model = pickle.load(f)
+    model = joblib.load(MODEL_PATH)
     model_loaded = True
 except:
     model = None
