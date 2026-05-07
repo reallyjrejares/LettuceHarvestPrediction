@@ -1,0 +1,13 @@
+public/uploads/*
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/debugbar/*
+python_api/venv/
+node_modules/
+.git
+.env
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

@@ -2,11 +2,9 @@
   "buildCommand": "pip install -r requirements.txt",
   "functions": {
     "api/predict.py": {
-      "memory": 1024,
       "maxDuration": 60
     },
     "api/health.py": {
-      "memory": 512,
       "maxDuration": 10
     }
   }
