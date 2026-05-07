@@ -1,0 +1,44 @@
+# CodeIgniter 4 .gitignore
+# https://github.com/bcit-ci/CodeIgniter4
+
+# Project ENVIROMENT
+.env
+.env.local
+.env.*.local
+
+# Folder Uploads
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Writable directory
+writable/cache/*
+!writable/cache/.gitkeep
+writable/logs/*
+!writable/logs/.gitkeep
+writable/session/*
+!writable/session/.gitkeep
+writable/uploads/*
+!writable/uploads/.gitkeep
+writable/debugbar/*
+!writable/debugbar/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python virtual environment (if using local Flask)
+python_api/venv/
+
+# Model cache files
+*.pkl
+!python_api/harvest_model.pkl
+
+# Node modules
+node_modules/
