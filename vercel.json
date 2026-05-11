@@ -4,6 +4,10 @@
     {
       "src": "public/index.php",
       "use": "@vercel/php"
+    },
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
     }
   ],
   "functions": {
@@ -27,12 +31,6 @@
     {
       "src": "/(.*)",
       "dest": "/public/index.php"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/public/index.php"
     }
   ]
 }

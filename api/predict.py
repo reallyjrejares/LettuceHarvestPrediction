@@ -3,15 +3,23 @@ import json
 import os
 from pathlib import Path
 
-# Load model once (cached between invocations)
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'python_api', 'harvest_model.joblib')
+# Resolve the model path across deployment environments
+ROOT = Path(__file__).resolve().parent
+MODEL_CANDIDATES = [
+    ROOT / 'harvest_model.joblib',
+    ROOT.parent / 'python_api' / 'harvest_model.joblib',
+    ROOT.parent.parent / 'python_api' / 'harvest_model.joblib',
+]
+MODEL_PATH = next((str(path) for path in MODEL_CANDIDATES if path.exists()), str(MODEL_CANDIDATES[0]))
 
 try:
     model = joblib.load(MODEL_PATH)
     model_loaded = True
-except:
+    print(f'✓ Model loaded successfully from {MODEL_PATH}')
+except Exception as e:
     model = None
     model_loaded = False
+    print(f'✗ Failed to load model from {MODEL_PATH}: {e}')
 
 
 def handler(request):
